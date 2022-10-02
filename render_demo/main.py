@@ -57,6 +57,11 @@ async def delete_todo(todo: Todo = Depends(get_todo)):
     await todo.delete()
 
 
+@app.get('/search', description='Route to monitor app availability')
+def health():
+    return {'status': 'ok'}
+
+
 register_tortoise(
     app,
     db_url=settings.database_url,
