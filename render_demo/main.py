@@ -57,7 +57,7 @@ async def delete_todo(todo: Todo = Depends(get_todo)):
     await todo.delete()
 
 
-@app.get('/search', description='Route to monitor app availability')
+@app.get('/health', description='Route to monitor app availability')
 def health():
     return {'status': 'ok'}
 
